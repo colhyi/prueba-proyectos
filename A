@@ -1,0 +1,9 @@
+num1 = 3
+num2 = 2
+num3 = 2
+num4 = 5
+
+resultado_sum = num1 +  num2
+resultado_mul = num3 * num4
+resultado_1 = resultado_sum + resultado_mul ** 2
+print(resultado_1)
