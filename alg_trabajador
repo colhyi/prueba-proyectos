@@ -1,0 +1,4 @@
+horas=int(input("Digite las horas trabajadas:"))
+coste=float(input("Digite el coste de la hora  de trabajo:"))
+paga_trabajo=horas*coste
+print("El pago es de:$", paga_trabajo)
