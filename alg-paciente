@@ -1,0 +1,91 @@
+class paciente:
+   def __init__(self, nombre, edad, direccion, hismed):
+      self.nombre=nombre
+      self.edad=edad
+      self.direccion=direccion
+      self.hismed=hismed
+
+   def getnombre(self):
+      return self.nombre
+   
+   def getedad(self):
+      return self.edad
+   
+   def getdireccion(self):
+      return self.direccion
+   
+   def gethismed(self):
+      return self.hismed
+   
+   def setnombre(self, nombre):
+         self.nombre = nombre     
+
+   def setedad(self, direccion):
+         self.direccion = direccion
+
+   def setdireccion(self, edad):
+         self.edad = edad
+
+   def sethismed(self, hismed):
+         self.hismed = hismed
+
+   def imprimir(self):
+         print("El nombre del Paciente es",self.nombre,
+         "\n edad: ",self.edad,
+         "\n direccion: ",self.direccion,
+         "\n hismed: ",self.hismed)
+'''
+p1 = paciente("johana garcia", "23", "cra342 232", "Atendido")
+p1.imprimir()
+p1.sethismed("gastritis")
+p1.imprimir()
+'''
+
+
+class medico:
+   def __init__(self, nombremed, especialidad, pacienteAT):
+         self.nombremed=nombremed
+         self.especialidad=especialidad
+         self.pacienteAT=pacienteAT
+
+       
+   def getnombremed(self):
+      return self.nombremed
+   def getespecialidad(self):
+      return self.especialidad
+   def getpacienteAT(self):
+      return self.pacienteAT
+   
+   def setnombremed(self, nombremed):
+         self.nombremed = nombremed  
+   def setespecialidad(self, especialidad):
+         self.especialidad = especialidad
+   def setpacienteAT(self, pacienteAT):
+         self.pacienteAT = pacienteAT
+
+   def imprimir(self):
+         print("El nombre del Doctor es",self.nombremed,
+         "\n especialidad: ",self.especialidad,
+         "\n pacienteAT: ",self.pacienteAT)
+         
+'''
+m = medico("carlos", "cardiologo", "johana garcia")
+m.imprimir()
+m.pacienteAT("johana garcia")
+m.imprimir()
+'''
+
+class tratamiento(paciente, medico):
+     def __init__(self, nombre, edad, direccion, hismed, nombremed, especialidad, pacienteAT):
+          super().__init__(nombre, edad, direccion, hismed)
+          super().setnombremed(nombremed)
+          super().setespecialidad(especialidad)
+          super().setpacienteAT(pacienteAT)
+
+     def imprimir(self):
+           print("El nombre del paciente es ", super().getnombre(),
+           "\n medico: ", super().getnombremed(),
+           "\n especialidad", super().getespecialidad())
+
+t=tratamiento("johana garcia", "23", "cra342 232", "gastritis", "carlos", "cardiologo", "johana garcia")
+t.imprimir()
