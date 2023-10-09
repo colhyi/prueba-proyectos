@@ -1,0 +1,6 @@
+n = float(input("Digite la cantidad a invertir: "))
+m = float(input("Digite el interes anual: "))
+l = float(input("Digite el numero de años: "))
+capital = n*m*l
+print("Su capital es de:", capital)
+ 
